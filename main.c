@@ -35,6 +35,14 @@ int main(void) {
       break;
       case 3:
         limpaConsole();
+        if(buscaDeletaProdutos(arvorePdt)){
+          limpaConsole();
+        }else{
+          positionPrint(0, 13);
+          printf("\x1b[31m\033[1m\t✖  Não existem dados na árvore!\x1b[0m");
+          positionPrint(0, 0);
+        }
+        
       break;
       case 4:
         destroiArvore(arvorePdt);

@@ -32,4 +32,7 @@ void botoes();
 */
 void mostraProduto(Produto produto, bool esqueda, bool direita);
 
+int buscaMenu();
+string entradaBusca(int op);
+int buscaTelaProduto(Produto * produto);
 #endif

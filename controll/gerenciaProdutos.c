@@ -54,3 +54,27 @@ bool mostraTodosArvore(Tree * arvore){
   }
   
 }
+
+bool buscaDeletaProdutos(Tree * arvore){
+  if(arvore->length > 0){
+  bool loop = true;
+  while(loop){
+    limpaConsole();
+    switch(buscaMenu()){
+      case 1:
+        entradaBusca(1);
+      break;
+      case 2:{
+        Produto * endPdt = (Produto *) buscaDadoChave(arvore, entradaBusca(2));
+        buscaTelaProduto(endPdt);
+      break;
+      }case 3:
+        loop = false;
+      break;
+    }
+  }
+    return true;
+  }else{
+    return false;
+  }
+}

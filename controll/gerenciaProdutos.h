@@ -13,6 +13,7 @@
 #include "../model/console-IO.h"
 #include "../model/arvoreBinaria.h"
 #include "../view/screens.h"
+#include "../model/produto.h"
 /**
 *  Insere vários produtos a árvore, recebe como parâmetro o endereço de uma ``Tree *``.
 */
@@ -24,4 +25,5 @@ void insereProdutoArvore(Tree * arvore);
 */
 bool mostraTodosArvore(Tree * arvore);
 
+bool buscaDeletaProdutos(Tree * arvore);
 #endif
