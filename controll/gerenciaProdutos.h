@@ -8,5 +8,5 @@
 #include "../view/screens.h"
 
 void insereProdutoArvore(Tree * arvore);
-void mostraTodosArvore(Tree * arvore);
+bool mostraTodosArvore(Tree * arvore);
 #endif

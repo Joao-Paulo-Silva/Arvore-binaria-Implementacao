@@ -8,16 +8,23 @@
 int main(void) {
   Tree * arvorePdt = _criarTree();
   bool loop = true;
+  limpaConsole();
   while(loop){
-    limpaConsole();
     switch(menuInicial()){
       case 1:{
         insereProdutoArvore(arvorePdt);
+        limpaConsole();
       break;
       }
       case 2:
         limpaConsole();
-        mostraTodosArvore(arvorePdt);
+        if(mostraTodosArvore(arvorePdt)){
+          limpaConsole();
+        }else{
+          positionPrint(0, 13);
+          printf("\x1b[31m\033[1m\t✖  Não existem dados na árvore!\x1b[0m");
+          positionPrint(0, 0);
+        }
       break;
       case 3:
         limpaConsole();

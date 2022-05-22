@@ -19,13 +19,15 @@ bool addNode(Node ** no, address endDado, string chave){
     (* no)->chave = chave;
     return true;
   }else{
-    if(strcmp(chave, (* no)->chave) < 0){
+    int verificacao = strcmp(chave, (* no)->chave);
+    if(verificacao < 0){
       return addNode(&(* no)->left, endDado, chave);
+    }else if(verificacao == 0){
+      return false;
     }else{
       return addNode(&(* no)->right, endDado, chave);
     }
   }
-  return false;
 }
 bool append(Tree * arvore, address endDado, string chave){
   if(arvore != NULL || endDado != NULL || chave != NULL){

@@ -129,10 +129,13 @@ void mostraProduto(Produto produto, bool esqueda, bool direita){
   }else if(esqueda == false && direita == true){
     printf("\033[2m┏━━━━━━━━━━━━━━━━━━━━━━┓\x1b[0m ┏━━━━━━━━━━━━━━━━━━┓"
          "\n\033[2m┃     ⬅️  Esquerda.     ┃\x1b[0m ┃    ➡️  Direita.   ┃"
-         "\n\033[2m┗━━━━━━━━━━━━━━━━━━━━━━┛\x1b[0m ┗━━━━━━━━━━━━━━━━━━┛");
+         "\n\033[2m┗━━━━━━━━━━━━━━━━━━━━━━┛\x1b[0m ┗━━━━━━━━━━━━━━━━━━┛\n");
   }else{
     printf("┏━━━━━━━━━━━━━━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━┓"
          "\n┃     ⬅️  Esquerda.     ┃ ┃    ➡️  Direita.   ┃"
-         "\n┗━━━━━━━━━━━━━━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━┛");
+         "\n┗━━━━━━━━━━━━━━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━┛\n");
   }
+  positionPrint(0, 12);
+  printf("\x1b[34m\033[1m\tDigite \033[3m\x1b[35mZ\x1b[0m\x1b[34m para voltar à tela inicial!\x1b[0m\n");
+  positionPrint(0, 11);
 }

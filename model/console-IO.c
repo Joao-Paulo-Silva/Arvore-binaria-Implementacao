@@ -51,13 +51,13 @@ int getArrow(void){
         case 'D': return 4; // Esqueda
         default: return 5;
       }
-    }else{
-      return 5;
     }
   } else if ( tecla == '\n'){
     return 0;
   }else if (tecla > 48 && tecla < 58){
     return tecla;
-  }
+  }else if(tecla == 'z' || tecla == 'Z'){
+      return 5;
+    }
   return -1;
 }

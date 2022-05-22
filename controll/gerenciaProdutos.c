@@ -7,10 +7,15 @@ void insereProdutoArvore(Tree * arvore){
     if(controle){
       limpaConsole();
       Produto * pdt = insereProduto();
-      append(arvore, pdt, getCodigo(pdt));
+      bool inserido = append(arvore, pdt, getCodigo(pdt));
       controle = false;
       positionPrint(0, 7);
       botoes();
+      if(inserido){
+        printf("\x1b[32m\n\033[1m\t\t✔  Inserido com sucesso!\x1b[0m");
+      }else{
+        printf("\x1b[31m\n\033[1m\t\t✖  Falha ao inserir dado, \n\t\tcódigo do produto já existe!\x1b[0m");
+      }
       positionPrint(0, 10);
     }else if((tecla = getch()) == '2'){
       controle = true;
@@ -24,7 +29,7 @@ void insereProdutoArvore(Tree * arvore){
   }
 }
 
-void mostraTodosArvore(Tree * arvore){
+bool mostraTodosArvore(Tree * arvore){
   if(arvore->length > 0){
     resetarAtual(arvore);
     bool loop = true;
@@ -43,6 +48,9 @@ void mostraTodosArvore(Tree * arvore){
       }
     }
      resetarAtual(arvore);
+    return true;
+  }else{
+    return false;
   }
   
 }
