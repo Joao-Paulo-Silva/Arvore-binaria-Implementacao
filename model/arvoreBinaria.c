@@ -83,6 +83,26 @@ address getDadosAtual(Tree * arvore){
   return arvore->atual->data;
 }
 
+address buscaChaveRecussiva(Node ** no, string chave){
+  if(* no == NULL){
+    return NULL;
+  }else{
+    int verificacao = strcmp(chave, (* no)->chave);
+    if(verificacao < 0){
+      return buscaChaveRecussiva(&(* no)->left, chave);
+    }else if(verificacao == 0){
+      return (* no)->data;
+    }else{
+      return buscaChaveRecussiva(&(* no)->right, chave);
+    }
+  }
+}
+
+address buscaDadoChave(Tree * arvore, string chave){
+  return buscaChaveRecussiva(&arvore->root, chave);
+}
+
+
 void destroiNo(Node * no){
   if(no != NULL){
     free(no->data);

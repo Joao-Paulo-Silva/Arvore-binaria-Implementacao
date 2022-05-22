@@ -1,3 +1,10 @@
+/*
+*  @copyright João Paulo.
+*  Github: https://github.com/Joao-Paulo-Silva
+*  @author: João Paulo.
+*  @date: 22.04.2022
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "./model/console-IO.h"
