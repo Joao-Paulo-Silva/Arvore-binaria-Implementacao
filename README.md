@@ -29,3 +29,18 @@ A interface deste projeto utiliza caracteres especiais para a formulação dos m
 #### Menu Inicial.
 
 Na tela inicial existem dois métodos para sua navegação, sendo elas: as setas do teclado ou os números de 1 a 4, após selecionar uma opção só apertar a tecla enter para entrar na opção.
+
+![](imgs/MenuInicial.gif)
+
+#### Inserir Produtos.
+
+![](imgs/inserir.gif)
+
+#### Lista Produtos.
+
+![](imgs/ListaTodos.gif)
+
+
+#### Buscar Produtos.
+
+![](imgs/busca.gif)
