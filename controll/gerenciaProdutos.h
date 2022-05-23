@@ -25,5 +25,9 @@ void insereProdutoArvore(Tree * arvore);
 */
 bool mostraTodosArvore(Tree * arvore);
 
+/**
+*  Função para buscar produtos na árvore binária através do 
+*  código e nome, com função para deletar da árvore o nó contendo o dado.
+*/
 bool buscaDeletaProdutos(Tree * arvore);
 #endif

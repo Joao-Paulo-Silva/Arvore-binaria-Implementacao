@@ -31,8 +31,16 @@ void botoes();
 *  os mesmos ativos se houver dado desativado se não houver dados nas folhas.
 */
 void mostraProduto(Produto produto, bool esqueda, bool direita);
-
+/**
+*  Interface do menu de busca.
+*/
 int buscaMenu();
+/**
+*  Interface de entrada de texto para a busca retorna uma ``string``.
+*/
 string entradaBusca(int op);
+/**
+*  Mostra o ``Produto`` pesquisado.
+*/
 int buscaTelaProduto(Produto * produto);
 #endif

@@ -31,3 +31,9 @@ float getPreco(Produto * pdt){
 void setPreco(Produto * pdt, float preco){
   pdt->preco = preco;
 }
+
+void destroiproduto(Produto * pdt){
+  if(pdt != NULL){
+    free(pdt);
+  }
+}

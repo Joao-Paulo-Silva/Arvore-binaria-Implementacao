@@ -31,7 +31,6 @@ typedef struct TREEB{
   Node * atual;
   //  Quantidade de dados que a árvore binária possui.
   int length;
-// Árvore binária contendo a raiz(``... * root``) e o nó atual(``... * atual``).
 }Tree; 
 
 /**
