@@ -14,6 +14,7 @@ void insereProdutoArvore(Tree * arvore){
       if(inserido){
         printf("\x1b[32m\n\033[1m\t\t✔  Inserido com sucesso!\x1b[0m");
       }else{
+        free(pdt);
         printf("\x1b[31m\n\033[1m\t\t✖  Falha ao inserir dado, \n\t\tcódigo do produto já existe!\x1b[0m");
       }
       positionPrint(0, 10);

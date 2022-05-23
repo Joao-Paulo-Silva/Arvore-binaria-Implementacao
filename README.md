@@ -22,25 +22,31 @@ Este projeto implementa uma árvore binária para tipos genéricos, no qual se u
 
 ---
 
-### Decisões para a interface no terminal. 
+### **Decisões para a interface no terminal.** 
 
 A interface deste projeto utiliza caracteres especiais para a formulação dos menus, também de métodos para o posicionamento no terminal e verificação se as teclas são pressionadas. 
 
-#### Menu Inicial.
+#### **Menu Inicial.**
 
 Na tela inicial existem dois métodos para sua navegação, sendo elas: as setas do teclado ou os números de 1 a 4, após selecionar uma opção só apertar a tecla enter para entrar na opção.
 
-![](imgs/MenuInicial.gif)
+<img src="imgs/MenuInicial.gif" margin-left="auto" margin-right="auto">
 
-#### Inserir Produtos.
+#### **Inserir Produtos.**
 
-![](imgs/inserir.gif)
+Nessa tela é possível a inserção de produtos na árvore podendo inserir 1 ou vários produtos, os produtos não serão inseridos se houver o mesmo código.
 
-#### Lista Produtos.
+<img src="imgs/inserir.gif" margin-left="auto" margin-right="auto">
 
-![](imgs/ListaTodos.gif)
+#### **Lista Produtos.**
+
+Nesta tela pode-se navegar pela árvore usando as setas do teclado para a esquerda e direita, mostrando o botão em cinza claro se não houver filho no nó.
+
+<img src="imgs/ListaTodos.gif" margin-left="auto" margin-right="auto">
 
 
-#### Buscar Produtos.
+#### **Buscar Produtos.**
 
-![](imgs/busca.gif)
+A opção de buscar produtos abre um novo menu, no qual pode se optar por buscar via nome ou código.
+
+<img src="imgs/busca.gif" margin-left="auto" margin-right="auto">
