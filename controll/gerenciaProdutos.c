@@ -56,16 +56,21 @@ bool mostraTodosArvore(Tree * arvore){
   
 }
 
+string getNomeProduto(address dado){
+  return getNome((Produto *) dado);
+}
+
 bool buscaDeletaProdutos(Tree * arvore){
   if(arvore->length > 0){
   bool loop = true;
   while(loop){
     limpaConsole();
     switch(buscaMenu()){
-      case 1:
-        entradaBusca(1);
+      case 1:{
+        Produto * endPdtNome = (Produto *) buscaDadoArvore(arvore, entradaBusca(1), getNomeProduto);
+        buscaTelaProduto(endPdtNome);
       break;
-      case 2:{
+      }case 2:{
         Produto * endPdt = (Produto *) buscaDadoChave(arvore, entradaBusca(2));
         buscaTelaProduto(endPdt);
       break;

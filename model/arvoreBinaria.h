@@ -83,6 +83,11 @@ address getDadosAtual(Tree * arvore);
 */
 address buscaDadoChave(Tree * arvore, string chave);
 /**
+*  Função para buscar qualquer elemento da árvore, recebe o endereço de uma função que retorna 
+*  um ``string`` com o campo que está sendo pesquisado.
+*/
+address buscaDadoArvore(Tree * arvore, string termoPesquisa, string (* getElemento)(address dado));
+/**
 * Função ``destroiArvore(...)`` está função desloca todos os nós e 
 * dados, também desloca a árvore binária. 
 */

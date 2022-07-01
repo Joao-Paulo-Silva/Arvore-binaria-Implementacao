@@ -112,6 +112,31 @@ void destroiNo(Node * no){
   }
 }
 
+address buscaRecursivaElemento(Node ** no, string termoPesquisa, string (* getElemento)(address dado)){
+  if(* no == NULL){
+    return NULL;
+  }else{
+    address data = NULL;
+    int verificacao = strcmp(termoPesquisa, getElemento((* no)->data));
+    if(verificacao == 0){
+      return (* no)->data;
+    }
+    data = buscaRecursivaElemento(&(* no)->left, termoPesquisa, getElemento);
+    if(data == NULL){
+      data = buscaRecursivaElemento(&(* no)->right, termoPesquisa, getElemento);
+    }
+    return data;
+  }
+}
+
+address buscaDadoArvore(Tree * arvore, string termoPesquisa, string (* getElemento)(address dado)){
+  if(arvore != NULL && getElemento != NULL && termoPesquisa != NULL){
+    return buscaRecursivaElemento(&arvore->root, termoPesquisa, getElemento);
+  }else{
+    return NULL;
+  }
+}
+
 void destroiArvore(Tree * arvore){
   if(arvore != NULL){
     destroiNo(arvore->root);
