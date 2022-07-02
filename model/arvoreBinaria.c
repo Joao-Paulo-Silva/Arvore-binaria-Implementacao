@@ -102,16 +102,6 @@ address buscaDadoChave(Tree * arvore, string chave){
   return buscaChaveRecussiva(&arvore->root, chave);
 }
 
-
-void destroiNo(Node * no){
-  if(no != NULL){
-    free(no->data);
-    destroiNo(no->left);
-    destroiNo(no->right);
-    free(no);
-  }
-}
-
 address buscaRecursivaElemento(Node ** no, string termoPesquisa, string (* getElemento)(address dado)){
   if(* no == NULL){
     return NULL;
@@ -134,6 +124,15 @@ address buscaDadoArvore(Tree * arvore, string termoPesquisa, string (* getElemen
     return buscaRecursivaElemento(&arvore->root, termoPesquisa, getElemento);
   }else{
     return NULL;
+  }
+}
+
+void destroiNo(Node * no){
+  if(no != NULL){
+    free(no->data);
+    destroiNo(no->left);
+    destroiNo(no->right);
+    free(no);
   }
 }
 
