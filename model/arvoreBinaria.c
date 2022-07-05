@@ -7,6 +7,7 @@ Node * _criarNode(){
 Tree * _criarTree(){
   Tree * novaTree = malloc(sizeof(Tree));
   novaTree->root = NULL;
+  novaTree->length = 0;
   return novaTree;
 }
 

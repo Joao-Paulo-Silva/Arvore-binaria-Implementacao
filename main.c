@@ -11,8 +11,10 @@
 #include "./controll/gerenciaProdutos.h"
 #include "./model/arvoreBinaria.h"
 #include "./view/screens.h"
+#include <locale.h>
 
 int main(void) {
+  setlocale(LC_ALL, "Portuguese");
   Tree * arvorePdt = _criarTree();
   bool loop = true;
   limpaConsole();
