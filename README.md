@@ -98,3 +98,90 @@ typedef struct TREE{
   no * atual;
 }Tree;
 ```
+
+## English
+
+
+#### ``@author João Paulo``, Link to run the project on [replit.com](https://replit.com/@JooPaulodaSilv1/Arvore-binaria-Implementacao).
+
+This project implements a binary tree for generic types, which uses a type ``address`` declared in the ``types.h`` library, this type is equivalent to an empty pointer ``void *``, or type declared in this header file is the ``string`` type, which is equivalent to ``char *``.
+
+---
+
+### Binary Tree
+
+A binary tree is a data structure characterized by: Either it has no elements. Or it has a distinct element, called the root, with two pointers to two different structures, called the left subtree and right subtree. [Wikipédia](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj1zafB-Pj3AhUaK7kGHbm-DCYQmhN6BAhWEAI&url=https%3A%2F%2Fpt.wikipedia.org%2Fwiki%2F%25C3%2581rvore_bin%25C3%25A1ria&usg=AOvVaw0qT_P5p18LdeLCRggL-CKi)
+
+![](imgs/ArvoreBinaria.svg)
+
+---
+
+### **Decisions for the interface in the terminal.** 
+
+The interface of this project uses special characters to formulate the menus, as well as methods for positioning in the terminal and checking if the keys are pressed.
+
+---
+
+#### **Home Menu.**
+
+On the home screen there are two methods for your navigation, namely: the keyboard arrows or the numbers from 1 to 4, after selecting an option just press the enter key to enter the option.
+
+
+![](imgs/MenuInicial.gif)
+
+---
+
+#### **Insert Products.**
+
+In this screen it is possible to insert products in the tree, being able to insert 1 or several products, the products will not be inserted if there is the same code.
+
+![](imgs/inserir.gif)
+
+---
+
+#### **List Products.**
+
+In this screen you can navigate through the tree using the left and right keyboard arrows, showing the button in light gray if there is no child in the node.
+
+![](imgs/ListaTodos.gif)
+
+---
+
+#### **Search Products.**
+
+The option to search for products opens a new menu, in which you can choose to search by name or code.
+
+![](imgs/busca.gif)
+
+---
+
+#### Node
+
+The node of a binary tree is characterized by having a value that the node stores and the address for its children (*left and right*), as in the example below with an integer number:
+
+```C
+// Definition of a structure to be the node type of the tree.
+typedef struct NODE{
+  int valor; // Value stored.
+  struct NODE * left; // Child on the left.
+  struct NODE * right;  // Child on the right.
+}no;
+```
+
+---
+
+#### Binary tree using the above type:
+
+```C
+typedef struct TREE{
+  no * root;
+}Tree;
+```
+The implementation is simple, as seen above, to help navigation, you can place the current node in the tree as well to facilitate tree navigation operations.
+
+```C
+typedef struct TREE{
+  no * root;
+  no * current;
+}Tree;
+```
