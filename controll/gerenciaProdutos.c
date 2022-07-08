@@ -62,23 +62,30 @@ string getNomeProduto(address dado){
 
 bool buscaDeletaProdutos(Tree * arvore){
   if(arvore->length > 0){
-  bool loop = true;
-  while(loop){
-    limpaConsole();
-    switch(buscaMenu()){
-      case 1:{
-        Produto * endPdtNome = (Produto *) buscaDadoArvore(arvore, entradaBusca(1), getNomeProduto);
-        buscaTelaProduto(endPdtNome);
-      break;
-      }case 2:{
-        Produto * endPdt = (Produto *) buscaDadoChave(arvore, entradaBusca(2));
-        buscaTelaProduto(endPdt);
-      break;
-      }case 3:
-        loop = false;
-      break;
+    bool loop = true;
+    while(loop){
+      limpaConsole();
+      if(arvore->length == 0){
+        break;
+      }
+      switch(buscaMenu()){
+        case 1:{
+          Produto * endPdtNome = (Produto *) buscaDadoArvore(arvore, entradaBusca(1), getNomeProduto);
+          if(buscaTelaProduto(endPdtNome) == 2){
+            removeDado(arvore, endPdtNome->codigo);
+          }
+        break;
+        }case 2:{
+          Produto * endPdt = (Produto *) buscaDadoChave(arvore, entradaBusca(2));
+          if(buscaTelaProduto(endPdt) == 2){
+            removeDado(arvore, endPdt->codigo);
+          }
+        break;
+        }case 3:
+          loop = false;
+        break;
+      }
     }
-  }
     return true;
   }else{
     return false;

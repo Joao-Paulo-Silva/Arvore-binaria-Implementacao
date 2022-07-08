@@ -47,6 +47,18 @@ Tree * _criarTree();
 bool append(Tree * arvore, address endDado, string chave);
 
 /**
+*  Função remover um nó da árvore a partir da chave(``string``), 
+*  retorna verdadeiro, se o nó for removido.
+*/
+bool removeDado(Tree * arvore, string chave);
+
+/**
+*  Função remover um nó da árvore a partir da chave(``string``) e retornar o dado, 
+*  se o nó for removido ou ``NULL`` se não remover.
+*/
+address pop(Tree * arvore, string chave);
+
+/**
 *  Função ``setAtualEsquerda(...)`` está função adiciona o nó 
 *  a esquerda do atual na posição do atual em ``Tree.atual``, 
 *  retorna ``false`` se o nó à esquerda for igual a ``NULL``.
@@ -65,23 +77,28 @@ bool setAtualDireita(Tree * arvore);
 *  igual ao ``Tree.root``, retorna false se a raiz for igual a NULL.
 */
 bool resetarAtual(Tree * arvore);
+
 /*
 * Retorna verdadeiro(``true``) se o nó à esquerda for diferente de nulo(``NULL``).
 */
 bool filhosAtualEsquerdaVazios(Tree * arvore);
+
 /**
 *  Retorna verdadeiro(``true``) se o nó à direita for diferente de nulo(``NULL``).
 */
 bool filhosAtualDireitaVazios(Tree * arvore);
+
 /**
 *  Função ``getDadosAtual(...)``, retorna um endereço(``address``) 
 *  para o dado do nó atual.
 */
 address getDadosAtual(Tree * arvore);
+
 /**
 *  Função de busca a partir da ``string chave``, retorna um endereço(``address``) para o dado.
 */
 address buscaDadoChave(Tree * arvore, string chave);
+
 /**
 *  Função para buscar qualquer elemento da árvore, recebe o endereço de uma função que retorna 
 *  um ``string`` com o campo que está sendo pesquisado.
@@ -101,8 +118,8 @@ address buscaDadoChave(Tree * arvore, string chave);
 *    }
 *  ```
 */
-
 address buscaDadoArvore(Tree * arvore, string termoPesquisa, string (* getElemento)(address dado));
+
 /**
 * Função ``destroiArvore(...)`` está função desloca todos os nós e 
 * dados, também desloca a árvore binária. 

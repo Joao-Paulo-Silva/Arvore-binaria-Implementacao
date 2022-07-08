@@ -30,6 +30,7 @@ bool addNode(Node ** no, address endDado, string chave){
     }
   }
 }
+
 bool append(Tree * arvore, address endDado, string chave){
   if(arvore != NULL || endDado != NULL || chave != NULL){
     bool aux;
@@ -39,6 +40,64 @@ bool append(Tree * arvore, address endDado, string chave){
     return aux;
   }else
     return false;
+}
+
+address removeNo(Node ** no, string chave){
+  if(* no == NULL){
+    return NULL;
+  }else{
+    int verificacao = strcmp(chave, (* no)->chave);
+    if(verificacao == 0){
+      address * auxData = (* no)->data;
+      if((* no)->left == NULL && (* no)->right == NULL){
+        free(* no);
+        * no = NULL;
+        return auxData;
+      }else{
+        Node * auxNo = (* no);
+        if((* no)->left == NULL){
+          (* no) = (* no)->right;
+          (* no)->right = NULL;
+          free(auxNo);
+          return auxData;
+        }else if((* no)->right == NULL){
+          (* no) = (* no)->left;
+          (* no)->left = NULL;
+          free(auxNo);
+          return auxData;
+        }else{
+          // Falta implementar a remoção se os dois filhos estiverem com dados. 
+          return NULL;
+        }
+      }   
+    }else if(verificacao < 0){
+      return removeNo(&(* no)->left, chave);
+    }else {
+      return removeNo(&(* no)->right, chave);
+    }
+  }
+}
+
+bool removeDado(Tree * arvore, string chave){
+  address * auxEndDado;
+  if((auxEndDado = removeNo(&arvore->root, chave)) != NULL){
+    arvore->length--;
+    free(auxEndDado);
+    auxEndDado = NULL;
+    return true;
+  }else{
+    return false;
+  }
+}
+
+address pop(Tree * arvore, string chave){
+  address * auxEndDado;
+  if((auxEndDado = removeNo(&arvore->root, chave)) != NULL){
+    arvore->length--;
+    return auxEndDado;
+  }else{
+    return NULL;
+  }
 }
 
 bool setAtualEsquerda(Tree * arvore){
@@ -64,6 +123,7 @@ bool resetarAtual(Tree * arvore){
   }else
     return false;
 }
+
 bool filhosAtualEsquerdaVazios(Tree * arvore){
   if(arvore->atual->left != NULL){
     return true;
@@ -71,6 +131,7 @@ bool filhosAtualEsquerdaVazios(Tree * arvore){
     return false;
   }
 }
+
 bool filhosAtualDireitaVazios(Tree * arvore){
   if(arvore->atual->right != NULL){
     return true;
@@ -78,7 +139,6 @@ bool filhosAtualDireitaVazios(Tree * arvore){
     return false;
   }
 }
-
 
 address getDadosAtual(Tree * arvore){
   return arvore->atual->data;
