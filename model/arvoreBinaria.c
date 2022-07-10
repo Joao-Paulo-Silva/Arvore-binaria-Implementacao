@@ -42,6 +42,21 @@ bool append(Tree * arvore, address endDado, string chave){
     return false;
 }
 
+/**
+*  Retorna o menor nó à esquerda e define como ``NULL`` o pai o ponteiro.
+*/
+Node * MenorEsqerda(Node ** no){
+  if((*no)->left != NULL) 
+    return MenorEsqerda(&(*no)->left);
+  else{
+    Node * aux = *no;
+    if((*no)->right != NULL)
+      *no = (*no)->right;
+    else
+      *no = NULL;
+    return aux;
+ }
+}
 address removeNo(Node ** no, string chave){
   if(* no == NULL){
     return NULL;
@@ -66,8 +81,13 @@ address removeNo(Node ** no, string chave){
           free(auxNo);
           return auxData;
         }else{
-          // Falta implementar a remoção se os dois filhos estiverem com dados. 
-          return NULL;
+          Node * aux = MenorEsqerda(&(* no)->right);
+          aux->right = (* no)->right;
+          aux->left = (* no)->left;
+          (* no) = NULL;
+          (* no) =  aux;
+          free(auxNo);
+          return auxData;
         }
       }   
     }else if(verificacao < 0){

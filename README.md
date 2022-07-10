@@ -112,7 +112,7 @@ This project implements a binary tree for generic types, which uses a type ``add
 
 A binary tree is a data structure characterized by: Either it has no elements. Or it has a distinct element, called the root, with two pointers to two different structures, called the left subtree and right subtree. [Wikipédia](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj1zafB-Pj3AhUaK7kGHbm-DCYQmhN6BAhWEAI&url=https%3A%2F%2Fpt.wikipedia.org%2Fwiki%2F%25C3%2581rvore_bin%25C3%25A1ria&usg=AOvVaw0qT_P5p18LdeLCRggL-CKi)
 
-![](imgs/ArvoreBinaria.svg)
+![](imgs/BinaryTree.svg)
 
 ---
 
