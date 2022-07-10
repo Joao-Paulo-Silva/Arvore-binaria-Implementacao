@@ -15,7 +15,7 @@ Tipo ``Produto`` de dado que define a estrutura de um produto, como codigo(``cha
 typedef struct PRODUTO{
   ...
 }Produto;
-´´´
+```
 
 ---
 
@@ -36,5 +36,5 @@ Go to the library [click here!](../model/produto.h)
 typedef struct PRODUTO{
   ...
 }Produto;
-´´´
+```
 ---

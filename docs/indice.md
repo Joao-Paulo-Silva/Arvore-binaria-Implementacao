@@ -17,7 +17,7 @@
 
 ### Project libraries:
 
-> 1. [**binary tree** : ``arvoreBinaria.h``](arvoreBinaria.md#English)
+> 1. [**binary tree** : ``arvoreBinaria.h``](arvoreBinaria.md#english)
 > 2. [**Product** : ``produto.h``](produto.md#english)
 > 3. [**Product Management** : ``gerenciaProdutos.h``](gerenciaProdutos.md#english)
 > 5. [**Console Input and Output:** : ``console-IO.h``](console-IO.md#english)
